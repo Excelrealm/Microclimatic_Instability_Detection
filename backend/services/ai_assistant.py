@@ -3,14 +3,15 @@ AI Weather Assistant using Google Gemini (free tier).
 """
 
 import os
-import google.generativeai as genai
 from typing import Optional
+from google import genai
+from google.genai import types
 
 API_KEY = os.environ.get("GOOGLE_API_KEY")
 if not API_KEY:
     raise RuntimeError("GOOGLE_API_KEY environment variable is not set")
 
-genai.configure(api_key=API_KEY)
+client = genai.Client(api_key=API_KEY)
 MODEL_NAME = "gemini-2.5-flash"
 
 
@@ -42,13 +43,13 @@ Be educational and encouraging. Keep answers 2-4 sentences unless asked for deta
     full_prompt = f"System: {system_prompt}\n\nContext:\n{context}\n\nUser: {question}\n\nAssistant:"
 
     try:
-        model = genai.GenerativeModel(MODEL_NAME)
-        response = model.generate_content(
-            full_prompt,
-            generation_config=genai.types.GenerationConfig(
-                max_output_tokens=300,
-                temperature=0.7,
-            )
+        response = client.models.generate_content(
+            model=MODEL_NAME,
+            contents=full_prompt,
+            config=types.GenerateContentConfig(
+                max_output_tokens=500,
+                temperature=0.5,
+            ),
         )
         return {"answer": response.text.strip(), "model": MODEL_NAME, "success": True}
     except Exception as e:

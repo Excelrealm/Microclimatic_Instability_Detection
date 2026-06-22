@@ -1,0 +1,4 @@
+{
+    "python.defaultInterpreterPath": "/home/badger/Documents/microclimate-public/backend/venv/bin/python",
+    "python.terminal.activateEnvironment": true
+}

@@ -14,7 +14,7 @@ from services.data_store import data_store
 from services.anomaly_detector import anomaly_detector
 from services.pattern_classifier import pattern_classifier
 from services.forecaster import forecaster
-from services.ai_assistant import ask_weather_assistant, get_weather_summary
+from services.ai_assistant import ask_weather_assistant
 
 router = APIRouter(prefix="/api/ai")
 
@@ -67,11 +67,6 @@ async def get_ai_summary():
             "summary": "No data available yet.",
         }
 
-    summary = get_weather_summary(current_data)
-    return {
-        "status": "success",
-        "summary": summary,
-    }
 
 
 # ─── Anomaly Detection Endpoints ───────────────────────────────
