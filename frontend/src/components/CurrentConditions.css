@@ -1,0 +1,181 @@
+.current-conditions {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.current-conditions h2 {
+  margin: 0 0 1.2rem 0;
+  color: #1a1a2e;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.conditions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+}
+
+.condition-card {
+  border-radius: 10px;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.condition-card:hover {
+  transform: translateY(-2px);
+}
+
+.condition-card.primary {
+  color: #ffffff;
+}
+
+.condition-card.primary.hot {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+}
+
+.condition-card.primary.warm {
+  background: linear-gradient(135deg, #ffa502 0%, #ff6348 100%);
+}
+
+.condition-card.primary.mild {
+  background: linear-gradient(135deg, #7bed9f 0%, #2ed573 100%);
+  color: #1a1a2e;
+}
+
+.condition-card.primary.cool {
+  background: linear-gradient(135deg, #70a1ff 0%, #5352ed 100%);
+}
+
+.condition-card.primary.high {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: #1a1a2e;
+}
+
+.condition-card.primary.moderate {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: #1a1a2e;
+}
+
+.condition-card.primary.low {
+  background: linear-gradient(135deg, #feca57 0%, #ff9a9e 100%);
+  color: #1a1a2e;
+}
+
+.condition-card.derived {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  color: #1a1a2e;
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-label {
+  font-size: 0.82rem;
+  opacity: 0.9;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.card-value {
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Pressure trend — standalone class, always visible */
+.primary-trend {
+  color: #1a1a2e !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  margin-top: 0.4rem !important;
+  background: linear-gradient(135deg, #7ec8e3 0%, #4a90d9 100%) !important;
+  display: inline-block !important;
+  padding: 0.3rem 0.8rem !important;
+  border-radius: 12px !important;
+  letter-spacing: 0.3px !important;
+  opacity: 1 !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-sub {
+  font-size: 0.78rem;
+  margin-top: 0.3rem;
+  opacity: 0.85;
+}
+
+.card-sub.unstable {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.card-sub.stable {
+  color: #28a745;
+}
+
+.no-data-message {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6c757d;
+}
+
+.no-data-message p {
+  font-size: 1.15rem;
+  margin: 0.5rem 0;
+}
+
+.sub-text {
+  font-size: 0.85rem !important;
+  color: #adb5bd;
+}
+
+/* Pressure Trend Card Background */
+.condition-card.primary-trend {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+}
+
+.condition-card.primary-trend .card-icon,
+.condition-card.primary-trend .card-label,
+.condition-card.primary-trend .card-value {
+  color: #ffffff;
+}
+
+/* Dark mode support */
+[data-theme='dark'] .condition-card.primary-trend {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+}
+
+[data-theme='dark'] .primary-trend {
+  color: #1a1a2e !important;
+  background: linear-gradient(135deg, #7ec8e3 0%, #4a90d9 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+[data-theme='dark'] .condition-card.derived {
+  background: #1e1e2e;
+  border-color: #2a2a40;
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .condition-card.derived .card-sub {
+  color: #b0b0c0;
+}
+
+[data-theme='dark'] .condition-card.derived .card-sub.unstable {
+  color: #ff6b6b;
+}
+
+[data-theme='dark'] .condition-card.derived .card-sub.stable {
+  color: #51cf66;
+}
+

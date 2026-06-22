@@ -1,0 +1,45 @@
+.statistics-panel {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.statistics-panel h2 {
+  margin: 0 0 0.2rem 0;
+  color: #1a1a2e;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.stat-subtitle {
+  margin: 0 0 1rem 0;
+  font-size: 0.8rem;
+  color: #adb5bd;
+}
+
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.stats-table th {
+  background: #f8f9fa;
+  padding: 0.5rem 0.8rem;
+  text-align: left;
+  font-weight: 600;
+  color: #495057;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.stats-table td {
+  padding: 0.5rem 0.8rem;
+  border-bottom: 1px solid #f1f3f5;
+}
+
+.mean-cell {
+  font-weight: 600;
+  color: #667eea;
+}

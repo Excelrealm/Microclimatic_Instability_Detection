@@ -1,0 +1,188 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;-webkit-font-smoothing:antialiased}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;background:#f1f3f5;color:#1a1a2e;line-height:1.5;min-height:100vh}
+#root{min-height:100vh;display:flex;flex-direction:column}
+
+/* ============================================================
+   DARK MODE — BASE
+   ============================================================ */
+[data-theme='dark'] body {
+  background: #0f0f1a;
+  color: #e0e0e0;
+}
+
+/* ============================================================
+   DARK MODE — ALL PANEL BACKGROUNDS
+   ============================================================ */
+[data-theme='dark'] .current-conditions,
+[data-theme='dark'] .trend-charts,
+[data-theme='dark'] .instability-panel,
+[data-theme='dark'] .alerts-panel,
+[data-theme='dark'] .statistics-panel,
+[data-theme='dark'] .location-selector,
+[data-theme='dark'] .remote-weather-card,
+[data-theme='dark'] .rain-card,
+[data-theme='dark'] .ml-card,
+[data-theme='dark'] .crop-selector,
+[data-theme='dark'] .status-badge,
+[data-theme='dark'] .modal-content {
+  background: #1a1a2e;
+  border-color: #2a2a40;
+  color: #e0e0e0;
+}
+
+/* ============================================================
+   DARK MODE — DERIVED CARDS (Dew Point, LI Proxy, Theta-E)
+   These intentionally keep their light backgrounds for contrast
+   ============================================================ */
+/* Removed — derived cards stay as-is in both modes */
+
+/* ============================================================
+   DARK MODE — PANEL HEADERS
+   ============================================================ */
+[data-theme='dark'] .instability-panel h2,
+[data-theme='dark'] .current-conditions h2,
+[data-theme='dark'] .statistics-panel h2,
+[data-theme='dark'] .trend-charts h2,
+[data-theme='dark'] .trends-header h2,
+[data-theme='dark'] .alerts-panel h2 {
+  color: #e0e0e0;
+}
+
+/* ============================================================
+   DARK MODE — CARD TITLES
+   ============================================================ */
+[data-theme='dark'] .ml-card h3,
+[data-theme='dark'] .rain-card h3,
+[data-theme='dark'] .location-selector h3,
+[data-theme='dark'] .remote-weather-card h3,
+[data-theme='dark'] .crop-selector h3,
+[data-theme='dark'] .chart-card h3 {
+  color: #e0e0e0;
+}
+
+/* ============================================================
+   DARK MODE — CHART CARDS
+   ============================================================ */
+[data-theme='dark'] .chart-card {
+  background: #222240;
+  border-color: #2a2a40;
+}
+
+/* ============================================================
+   DARK MODE — STATISTICS TABLE
+   ============================================================ */
+[data-theme='dark'] .stats-table th {
+  background: #222240;
+  color: #e0e0e0;
+}
+[data-theme='dark'] .stats-table td {
+  color: #c0c0d0;
+  border-color: #2a2a40;
+}
+
+/* ============================================================
+   DARK MODE — ALERTS PANEL
+   ============================================================ */
+[data-theme='dark'] .alert-item.severe { background: #2a1a1a; }
+[data-theme='dark'] .alert-item.warning { background: #2a2410; }
+[data-theme='dark'] .alert-item.moderate { background: #1a2430; }
+[data-theme='dark'] .alert-item.info { background: #1a2a1a; }
+[data-theme='dark'] .alert-item .alert-text { color: #e0e0e0; }
+
+/* ============================================================
+   DARK MODE — INSTABILITY INDICATORS
+   ============================================================ */
+[data-theme='dark'] .indicator-card.danger { background: #2a1a1a; }
+[data-theme='dark'] .indicator-card.warning { background: #2a2410; }
+[data-theme='dark'] .indicator-card.success { background: #1a2a1a; }
+[data-theme='dark'] .indicator-name,
+[data-theme='dark'] .indicator-value { color: #e0e0e0; }
+[data-theme='dark'] .indicator-description { color: #a0a0b8; }
+
+/* ============================================================
+   DARK MODE — ML & RAIN CARDS
+   ============================================================ */
+[data-theme='dark'] .ml-card .score-value,
+[data-theme='dark'] .rain-card .rain-value { color: #e0e0e0; }
+[data-theme='dark'] .ml-card .bar-label { color: #b0b0c0; }
+[data-theme='dark'] .ml-card .bar-value { color: #e0e0e0; }
+[data-theme='dark'] .ml-card .timestamp,
+[data-theme='dark'] .rain-card .rain-confidence,
+[data-theme='dark'] .rain-card .rain-timestamp { color: #a0a0b8; }
+[data-theme='dark'] .bar-track { background: #2a2a40; }
+
+/* ============================================================
+   DARK MODE — STATUS BADGE
+   ============================================================ */
+[data-theme='dark'] .status-badge { background: #1a1a2e; }
+[data-theme='dark'] .status-badge .status-text { color: #e0e0e0; }
+
+/* ============================================================
+   DARK MODE — REMOTE WEATHER
+   ============================================================ */
+[data-theme='dark'] .remote-item { background: #222240; }
+[data-theme='dark'] .remote-value { color: #e0e0e0; }
+[data-theme='dark'] .remote-timestamp { color: #a0a0b8; }
+
+/* ============================================================
+   DARK MODE — LOCATION SELECTOR
+   ============================================================ */
+[data-theme='dark'] .location-search {
+  background: #222240; color: #e0e0e0; border-color: #2a2a40;
+}
+[data-theme='dark'] .location-btn {
+  background: #222240; color: #e0e0e0; border-color: #2a2a40;
+}
+[data-theme='dark'] .suggestions-list {
+  background: #1a1a2e; border-color: #2a2a40;
+}
+[data-theme='dark'] .suggestion-item { color: #e0e0e0; }
+[data-theme='dark'] .suggestion-item:hover { background: #222240; }
+[data-theme='dark'] .location-dropdown {
+  background: #222240; color: #e0e0e0; border-color: #2a2a40;
+}
+
+/* ============================================================
+   DARK MODE — CROP SELECTOR
+   ============================================================ */
+[data-theme='dark'] .crop-selector select {
+  background: #222240; color: #e0e0e0; border-color: #2a2a40;
+}
+
+/* ============================================================
+   DARK MODE — EXPORT BUTTON
+   ============================================================ */
+[data-theme='dark'] .export-btn { background: #3a3a5a; }
+
+/* ============================================================
+   DARK MODE — LOADING & MESSAGES
+   ============================================================ */
+[data-theme='dark'] .loading-spinner {
+  border-color: #2a2a40; border-top-color: #667eea;
+}
+[data-theme='dark'] .dashboard-loading h2,
+[data-theme='dark'] .dashboard-loading p { color: #e0e0e0; }
+[data-theme='dark'] .no-data-message { color: #a0a0b8; }
+[data-theme='dark'] .last-updated { color: #a0a0b8; }
+[data-theme='dark'] .error-banner {
+  background: #2a1a1a; border-color: #5a2020; color: #ff8080;
+}
+
+/* ============================================================
+   DARK MODE — LEARN PAGE
+   ============================================================ */
+[data-theme='dark'] .learn-header h1,
+[data-theme='dark'] .learn-section h2 { color: #e0e0e0; }
+[data-theme='dark'] .formula-card,
+[data-theme='dark'] .guide-card,
+[data-theme='dark'] .concept-card { background: #1a1a2e; }
+[data-theme='dark'] .formula-header h3,
+[data-theme='dark'] .guide-card h3,
+[data-theme='dark'] .concept-card h3 { color: #e0e0e0; }
+[data-theme='dark'] .formula-description,
+[data-theme='dark'] .concept-card p,
+[data-theme='dark'] .references-list li { color: #a0a0b8; }
+[data-theme='dark'] .formula-expression { background: #222240; color: #e0e0e0; }
+[data-theme='dark'] .guide-table th { background: #222240; color: #e0e0e0; }
+[data-theme='dark'] .guide-table td { color: #a0a0b8; border-color: #2a2a40; }

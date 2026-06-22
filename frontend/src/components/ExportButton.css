@@ -1,0 +1,15 @@
+.export-btn {
+  padding: 0.5rem 1rem;
+  background: #1a1a2e;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.export-btn:hover {
+  background: #16213e;
+}

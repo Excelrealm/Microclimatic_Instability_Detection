@@ -1,0 +1,90 @@
+.ml-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 1.5rem;
+}
+
+.ml-card h3 {
+  margin: 0 0 0.8rem 0;
+  color: #1a1a2e;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.composite-score {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.score-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.risk-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.individual-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.bar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bar-label {
+  width: 90px;
+  font-size: 0.72rem;
+  color: #6c757d;
+  text-transform: capitalize;
+  flex-shrink: 0;
+}
+
+.bar-track {
+  flex: 1;
+  height: 12px;
+  background: #e9ecef;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 6px;
+  transition: width 0.5s ease;
+}
+
+.bar-value {
+  width: 32px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #495057;
+  text-align: right;
+}
+
+.timestamp {
+  margin: 0;
+  font-size: 0.72rem;
+  color: #adb5bd;
+}
+
+.error {
+  color: #dc3545;
+}

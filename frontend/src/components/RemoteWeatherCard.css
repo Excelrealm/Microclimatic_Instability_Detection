@@ -1,0 +1,46 @@
+.remote-weather-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #4facfe;
+}
+
+.remote-weather-card h3 {
+  margin: 0 0 0.2rem 0;
+  color: #1a1a2e;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.remote-timestamp {
+  margin: 0 0 0.7rem 0;
+  font-size: 0.75rem;
+  color: #adb5bd;
+}
+
+.remote-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.remote-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #f8f9fa;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+}
+
+.remote-icon {
+  font-size: 1.1rem;
+}
+
+.remote-value {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1a1a2e;
+}

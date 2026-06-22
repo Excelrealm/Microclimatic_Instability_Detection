@@ -1,0 +1,4 @@
+.footer { text-align: center; padding: 1.5rem 1rem; margin-top: auto; background: #1a1a2e; color: #a8b2d1; }
+.footer p { margin: 0.25rem 0; font-size: 0.85rem; }
+.footer-sub { opacity: 0.7; font-size: 0.78rem !important; }
+.footer-citation { margin-top: 0.5rem !important; font-size: 0.72rem !important; opacity: 0.5; font-style: italic; max-width: 600px; margin-left: auto !important; margin-right: auto !important; }

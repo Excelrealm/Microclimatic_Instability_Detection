@@ -1,0 +1,329 @@
+/* ==========================================================================
+   1. SEMANTIC TOKENS & INTERFACE LAYERS (Light / Dark Architecture)
+   ========================================================================== */
+:root {
+  --chat-window-bg: rgba(255, 255, 255, 0.85);
+  --chat-blur: blur(16px);
+  --chat-surface: #ffffff;
+  --chat-text-main: #0f172a;
+  --chat-text-muted: #64748b;
+  --chat-border-color: rgba(15, 23, 42, 0.08);
+  --chat-shadow: 0 20px 40px -4px rgba(15, 23, 42, 0.1), 0 8px 16px -4px rgba(15, 23, 42, 0.06);
+  
+  --brand-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  --user-bubble-bg: #4f46e5;
+  --user-bubble-text: #ffffff;
+  --bot-bubble-bg: #f1f5f9;
+  --bot-bubble-text: #1e293b;
+  
+  --input-field-bg: #f8fafc;
+  --input-focus-ring: rgba(79, 70, 229, 0.15);
+}
+
+.dark-mode {
+  --chat-window-bg: rgba(15, 23, 42, 0.8);
+  --chat-blur: blur(20px);
+  --chat-surface: #1e1b4b; /* Deep rich midnight purple layer to match dashboard */
+  --chat-text-main: #f8fafc;
+  --chat-text-muted: #94a3b8;
+  --chat-border-color: rgba(255, 255, 255, 0.08);
+  --chat-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  
+  --brand-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  --user-bubble-bg: #6366f1;
+  --user-bubble-text: #ffffff;
+  --bot-bubble-bg: #2e2a57;
+  --bot-bubble-text: #f1f5f9;
+  
+  --input-field-bg: #131130;
+  --input-focus-ring: rgba(99, 102, 241, 0.25);
+}
+
+/* ==========================================================================
+   2. FLOATING ACTION TRIGGER
+   ========================================================================== */
+.ai-chat-trigger {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--brand-gradient);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  animation: floatingPulse 3s infinite ease-in-out;
+}
+
+.ai-chat-trigger:hover {
+  transform: scale(1.08) translateY(-4px);
+  box-shadow: 0 16px 30px -5px rgba(79, 70, 229, 0.6);
+}
+
+/* ==========================================================================
+   3. CHAT CANVAS WINDOW (Seating & Entry Animation Fixed)
+   ========================================================================== */
+.ai-chat-widget {
+  position: fixed;
+  bottom: 5.5rem; /* Lifted elegantly above the button sector */
+  right: 2rem;
+  width: 380px;
+  height: 580px;
+  background-color: var(--chat-window-bg);
+  backdrop-filter: var(--chat-blur);
+  -webkit-backdrop-filter: var(--chat-blur);
+  color: var(--chat-text-main);
+  border: 1px solid var(--chat-border-color);
+  border-radius: 24px;
+  box-shadow: var(--chat-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 9999;
+  
+  /* Smooth Slide-up Fade-in Entrance */
+  animation: widgetEntrance 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+/* ==========================================================================
+   4. PREMIUM RUNTIME COMPONENTS (Header, Messages, Input)
+   ========================================================================== */
+.ai-chat-header {
+  padding: 1.1rem 1.25rem;
+  background-color: var(--chat-surface);
+  border-bottom: 1px solid var(--chat-border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.header-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.bot-avatar-frame {
+  width: 32px;
+  height: 32px;
+  background: var(--brand-gradient);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.25);
+}
+
+.header-title-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title-text span {
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.1px;
+}
+
+.header-status-indicator {
+  font-size: 0.75rem;
+  color: var(--chat-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.header-status-indicator::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: #10b981; /* Live green dot */
+  border-radius: 50%;
+}
+
+/* Clean Header Action Controls */
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.header-action-btn {
+  background: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: var(--chat-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.header-action-btn:hover {
+  background-color: var(--chat-border-color);
+  color: var(--chat-text-main);
+}
+
+/* Message Thread Sandbox */
+.ai-chat-messages {
+  flex: 1;
+  padding: 1.25rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.message-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 82%;
+}
+
+.message-wrapper.user { align-self: flex-end; }
+.message-wrapper.assistant { align-self: flex-start; }
+
+.message-bubble {
+  padding: 0.8rem 1.1rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.message-wrapper.user .message-bubble {
+  background-color: var(--user-bubble-bg);
+  color: var(--user-bubble-text);
+  border-radius: 18px 18px 4px 18px;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+}
+
+.message-wrapper.assistant .message-bubble {
+  background-color: var(--chat-surface);
+  color: var(--bot-bubble-text);
+  border-radius: 18px 18px 18px 4px;
+  border: 1px solid var(--chat-border-color);
+}
+
+.message-timestamp {
+  font-size: 0.72rem;
+  color: var(--chat-text-muted);
+  padding: 0 4px;
+}
+.message-wrapper.user .message-timestamp { align-self: flex-end; }
+
+/* Micro Typing Loader Styling */
+.typing-container {
+  display: flex;
+  gap: 4px;
+  padding: 0.5rem 0.2rem;
+}
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--chat-text-muted);
+  border-radius: 50%;
+  animation: typingPulse 1.4s infinite both;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* Input Composer Foot Track */
+.ai-chat-input-bar {
+  padding: 1rem 1.25rem 1.25rem 1.25rem;
+  background-color: var(--chat-surface);
+  border-top: 1px solid var(--chat-border-color);
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.input-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.ai-chat-input-bar input {
+  width: 100%;
+  padding: 0.75rem 1.1rem;
+  background-color: var(--input-field-bg);
+  color: var(--chat-text-main);
+  border: 1px solid var(--chat-border-color);
+  border-radius: 14px;
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.ai-chat-input-bar input:focus {
+  border-color: var(--user-bubble-bg);
+  box-shadow: 0 0 0 4px var(--input-focus-ring);
+  background-color: var(--chat-surface);
+}
+
+/* Modern Send Action Control Button */
+.send-action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--brand-gradient);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, opacity 0.2s;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
+}
+
+.send-action-btn:hover:not(:disabled) {
+  transform: scale(1.04);
+  opacity: 0.95;
+}
+
+.send-action-btn:disabled {
+  background: var(--chat-border-color);
+  color: var(--chat-text-muted);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   5. PERFORMANCE ANIMATION FRAMES
+   ========================================================================== */
+@keyframes widgetEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes floatingPulse {
+  0%, 100% { box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.4), 0 0 0 0 rgba(79, 70, 229, 0.4); }
+  50% { box-shadow: 0 14px 30px -5px rgba(79, 70, 229, 0.5), 0 0 0 12px rgba(79, 70, 229, 0); }
+}
+
+@keyframes typingPulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.15); }
+}

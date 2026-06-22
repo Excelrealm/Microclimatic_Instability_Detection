@@ -1,0 +1,130 @@
+.climate-relationship-panel {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.climate-relationship-panel h3 {
+  margin: 0 0 0.2rem 0;
+  color: #1a1a2e;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.panel-subtitle {
+  margin: 0 0 0.8rem 0;
+  font-size: 0.75rem;
+  color: #adb5bd;
+  font-style: italic;
+}
+
+.relationship-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.relationship-item {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.rel-label {
+  font-size: 0.68rem;
+  color: #6c757d;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.rel-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  display: block;
+}
+
+.rel-tag {
+  font-size: 0.62rem;
+  font-weight: 600;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 0.2rem;
+}
+
+.rel-tag.warning { background: #fff3cd; color: #856404; }
+.rel-tag.danger { background: #f8d7da; color: #721c24; }
+.rel-tag.good { background: #d4edda; color: #155724; }
+
+.relationship-insights {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.relationship-insights h4 {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.82rem;
+  color: #1a1a2e;
+}
+
+.insight-item {
+  margin: 0.3rem 0;
+  font-size: 0.78rem;
+  color: #495057;
+  line-height: 1.4;
+}
+
+.relationship-footer {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.relationship-footer p {
+  margin: 0.2rem 0;
+}
+
+.relationship-footer strong {
+  color: #1a1a2e;
+}
+
+/* Dark mode */
+[data-theme='dark'] .climate-relationship-panel {
+  background: #1a1a2e;
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .climate-relationship-panel h3 {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .relationship-item {
+  background: #222240;
+}
+
+[data-theme='dark'] .rel-value {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .relationship-insights {
+  background: #222240;
+}
+
+[data-theme='dark'] .relationship-insights h4 {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .insight-item {
+  color: #b0b0c0;
+}
+
+[data-theme='dark'] .relationship-footer strong {
+  color: #e0e0e0;
+}

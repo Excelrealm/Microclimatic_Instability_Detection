@@ -1,0 +1,38 @@
+.rain-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 1.5rem;
+}
+.rain-card h3 {
+  margin: 0 0 0.8rem 0;
+  color: #1a1a2e;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.rain-probability {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+.rain-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+.rain-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.rain-confidence,
+.rain-timestamp {
+  margin: 0.3rem 0;
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+.error {
+  color: #dc3545;
+}

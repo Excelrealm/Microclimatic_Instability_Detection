@@ -1,0 +1,260 @@
+.learn-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.learn-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.learn-header h1 {
+  font-size: 2rem;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+}
+
+.learn-subtitle {
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+.learn-section {
+  margin-bottom: 2.5rem;
+}
+
+.learn-section h2 {
+  font-size: 1.4rem;
+  color: #1a1a2e;
+  margin-bottom: 0.3rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #667eea;
+}
+
+.section-note {
+  color: #6c757d;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+/* Formula cards */
+.formulas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.formula-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid;
+}
+
+.formula-card.implemented {
+  border-color: #667eea;
+}
+
+.formula-card.not-implemented {
+  border-color: #adb5bd;
+  opacity: 0.85;
+}
+
+.formula-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.formula-header h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #1a1a2e;
+}
+
+.formula-symbol {
+  background: #667eea;
+  color: #ffffff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: 'Times New Roman', serif;
+  font-style: italic;
+}
+
+.formula-expression {
+  background: #f8f9fa;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  font-family: 'Courier New', Courier, monospace;
+  color: #1a1a2e;
+  margin-bottom: 0.8rem;
+}
+
+.formula-description {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #495057;
+  margin: 0 0 0.5rem 0;
+}
+
+.formula-reference {
+  font-size: 0.75rem;
+  color: #adb5bd;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Interpretation guides */
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.guide-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.guide-card h3 {
+  margin: 0 0 0.8rem 0;
+  font-size: 1rem;
+  color: #1a1a2e;
+}
+
+.guide-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.guide-table th {
+  text-align: left;
+  padding: 0.4rem 0.5rem;
+  background: #f8f9fa;
+  color: #495057;
+  font-weight: 600;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.guide-table td {
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid #f1f3f5;
+  color: #495057;
+}
+
+.range-badge {
+  color: #ffffff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Concepts */
+.concepts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.concept-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.concept-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: #667eea;
+}
+
+.concept-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #495057;
+}
+
+/* References */
+.references-list {
+  list-style: none;
+  padding: 0;
+}
+
+.references-list li {
+  padding: 0.4rem 0;
+  font-size: 0.85rem;
+  color: #495057;
+  line-height: 1.5;
+  border-bottom: 1px solid #f1f3f5;
+}
+
+.references-list li:last-child {
+  border-bottom: none;
+}
+
+/* Dark mode */
+[data-theme='dark'] .learn-header h1,
+[data-theme='dark'] .learn-section h2 {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .formula-card,
+[data-theme='dark'] .guide-card,
+[data-theme='dark'] .concept-card {
+  background: #1a1a2e;
+}
+
+[data-theme='dark'] .formula-header h3,
+[data-theme='dark'] .guide-card h3,
+[data-theme='dark'] .concept-card h3 {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .formula-description,
+[data-theme='dark'] .concept-card p,
+[data-theme='dark'] .references-list li {
+  color: #a0a0b8;
+}
+
+[data-theme='dark'] .formula-expression {
+  background: #222240;
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .guide-table th {
+  background: #222240;
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .guide-table td {
+  color: #a0a0b8;
+  border-color: #2a2a40;
+}
+
+@media (max-width: 768px) {
+  .formulas-grid,
+  .guides-grid,
+  .concepts-grid {
+    grid-template-columns: 1fr;
+  }
+}

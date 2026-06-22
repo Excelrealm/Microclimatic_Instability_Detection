@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+pydantic==2.5.0
+python-multipart
+numpy
+joblib 
+chirps
+requests
+pandas
+scikit-learn
+protobuf
+google-generativeai
