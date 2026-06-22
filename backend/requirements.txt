@@ -8,4 +8,4 @@ requests
 pandas
 scikit-learn
 protobuf
-google-generativeai
+google.genai
